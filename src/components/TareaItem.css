@@ -1,0 +1,102 @@
+.tarea-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlide 0.4s forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tarea-item.saliendo {
+  animation: fadeOutScale 0.4s forwards;
+}
+
+@keyframes fadeOutScale {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.tarea-item.completada {
+  color: gray;
+}
+
+.tarea-input-editar {
+  flex-grow: 1;
+  padding: 6px;
+  margin-right: 8px;
+}
+
+.tarea-toggle {
+  cursor: pointer;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.tarea-pendiente {
+  color: red;
+}
+
+.tarea-texto {
+  margin-left: 8px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.tarea-completada .tarea-texto {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.tarea-texto.tachado {
+  text-decoration: line-through;
+}
+
+.tarea-fecha {
+  margin-left: 12px;
+  color: #666;
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-guardar,
+.btn-cancelar {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+.btn-editar {
+  color: blue;
+}
+
+.btn-eliminar {
+  color: red;
+}
+
+.btn-guardar {
+  color: green;
+}
+
+.btn-cancelar {
+  color: orange;
+}
